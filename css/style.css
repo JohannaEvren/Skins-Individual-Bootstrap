@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+
+*{
+	margin:0; 
+	padding:0;
+	box-sizing: border-box;
+}
+
+section [class*="col"]{
+	padding-right: 0px; 
+    padding-left: 0px;
+}
+
+html body{
+	background-color: rgba(39,39,39,1);	
+	overflow-x: hidden;
+}
+
+#padding {padding:25px;} /* For Header columns */
+
+
+header{ 
+	background-color: rgba(39,39,39,1);
+	color:rgba(217,217,217,1);
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-size: 35px;
+	letter-spacing: 6px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+
+}
+
+/* SHOPPINGCART*/
+
+.cart{
+	background-color: rgba(39,39,39,1);
+	position: absolute;
+	left:0;
+	top:-100vh;
+	width: 100vw;
+	height:350px;
+	z-index: 15;
+	transition: top 0.9s;
+	padding:120px 30px 60px 30px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cart div {
+	font-size: 15px;
+	text-align: left;
+}
+
+.cart div:last-child {margin-left: 60%;}
+
+.line1 {width:100%;}
+
+.line2 {
+	width:100%; 
+	background-color:rgba(217,217,217,1);
+}
+
+#shoppingc{
+	position: relative;
+	z-index: 20;
+	cursor: pointer;
+}
+
+/*MENU*/
+
+nav ul{
+	list-style-type: none;
+	margin:100px;
+}
+
+nav ul li{margin: 20px;}
+
+header a{
+	color:rgba(217,217,217,1);
+	text-decoration: none;
+}
+
+header a:hover{
+	color:rgba(74,75,75,1);
+	text-decoration: none;
+}
+
+
+.nav-toggle{
+	width: 40px;
+	height:26px;
+	z-index:14;
+	cursor: pointer;
+	display: block;
+	margin-top:20px;
+}
+
+.nav-toggle span{
+	position: relative;
+	height:2px;
+	width: 30px;
+	background-color:rgba(217,217,217,1);
+	display: block;
+}
+
+.menu{
+	position: absolute;
+	top:0;
+	margin-top: 100px;
+	right:-100vw;
+	width:100vw;
+	height:100vh;
+	background-color: rgba(39,39,39,1);
+	z-index: 10;
+	font-size: 20px;
+	transition: right 0.8s;
+}
+
+
+.nav-toggle span:nth-child(1) {transition: transform 0.8s;}
+.nav-toggle span:nth-child(2){transition: transform 0.8s; top:10px;}
+
+input[type="checkbox"] {display: none;}
+
+input[id="toggle"]:checked ~ .menu{right: 0;}
+
+input[id="cartbutton"]:checked ~ .cart{top: 0;}
+
+input[id="toggle"]:checked ~ .nav-toggle span:nth-child(1){
+	transform:rotate(45deg);
+	background-color: rgba(255,255,255,1);
+}
+
+input[id="toggle"]:checked ~ .nav-toggle span:nth-child(2){
+	transform:rotate(-45deg);
+	top:-3px;
+	background-color: white;
+}
+
+
+/* BRAND SECTION */
+
+
+[class*="brand"]{ 
+	margin:0; 
+	padding:0;
+	font-size: 40px;
+}
+
+
+.brand1{
+	position: relative;
+	height:55vh;
+	border-top:2px solid rgba(217,217,217,1);
+}
+
+.brand1::before{
+	background-image: url(https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/2/9/29-08-2019_aesop_classicconditioner_200ml_ahr23_tc_1_1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	content:"";
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0.5;
+}
+
+.brand2{
+	position: relative;
+	height:55vh;
+	border-top:2px solid rgba(217,217,217,1);
+	border-bottom:2px solid rgba(217,217,217,1);
+}
+
+.brand2::before{
+	background-image: url(../img/byredo6.jpeg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	content:"";
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0.5;
+}
+
+.brand3{
+	position: relative;
+	height:36vh;
+	border-top:2px solid rgba(217,217,217,1);
+	border-bottom: 2px solid rgba(217,217,217,1);
+	
+}
+
+.brand3::before{
+	background-image: url(../img/Labruketmood.jpeg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	content:"";
+	width:100vw;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0.5;
+}
+
+[class*="lable"]{
+	background-color: rgba(217,217,217,0.4);
+	padding:15px;
+	position: absolute;
+	bottom: 10vh;
+
+}
+
+
+[class*="lable"]:hover{background-color: rgba(217,217,217,0.6);}
+
+[class*="lable"] img{
+	width:150px;
+	margin:10px;
+
+}
+
+
+.lable_aeseop {
+	left:0;
+	width:200px;
+}
+
+.lable_bruket{
+	width:300px;
+}
+
+.lable_byredo{
+	width:250px;
+	right:0;
+}
+
+
+footer{
+	background-color: rgba(39,39,39,1);
+	color:rgba(217,217,217,1);
+	font-size: 20px;
+	font-family: 'Playfair Display', serif;
+	height:200px;
+}
+
+.contact h4{
+	font-size: 30px;
+	letter-spacing: 5px;
+	margin-bottom: 10px;
+}
+
+.contact{
+	text-align: center;
+	margin-top: 30px;
+}
+
+.social{text-align: center;}
+
+.contact p{font-size: 19px;}
+
+.social > a {margin:10px;}
+
+
+/* IPHONE X */
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) {
+
+
+    	.brand1, .brand2{height:46vh;}
+
+    	.brand3 {height:25vh;}
+
+}
+
+
+@media  only screen and (min-width: 767px) {
+
+
+		.brand3::before{background-image: url(../img/Labruket.jpg);}
+
+		.brand1{
+			border-right:2px solid rgba(217,217,217,1);
+			border-bottom:2px solid rgba(217,217,217,1);
+		}
+	
+}
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+
+		.brand1, .brand2 {height:36vh;}
+
+		.brand3 {height:30vh;}
+
+
+}
+
+@media only screen and (min-width: 991px){
+
+
+
+		.cart{
+			position: absolute;
+			left:-1100%;
+		}
+
+		#padding{
+			height:100px;
+		}
+
+
+		/* MENU FOR DESKTOP*/
+			
+		nav ul{
+				
+			list-style-type: none;
+			margin:0;
+			position: absolute;
+			top:0;
+			margin-top: 20px;
+			display: flex;
+			justify-content: space-between;
+			width: 90%;		
+		}
+		
+		.nav-toggle{display: none;}
+
+		.nav-toggle span{display: none;}
+
+		.menu{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			background-color: rgba(255, 255, 255, 0);
+			width: 100%;
+			position: static;
+			top:0;
+			left:0;
+		}
+
+
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+
+
+		.brand1, .brand2 {height:65vh;}
+
+		.brand3 {height:55vh;}
+
+}
+
+@media only screen and (max-width: 1299px) and (min-width: 1200px){
+
+
+		.brand1, .brand2, .brand3 {height:70vh;}
+
+}
+
+@media only screen and (min-width: 1300px){
+
+
+		.brand1, .brand2 {height:88vh;}
+
+		.brand3 {height:70vh;}
+	
+}
+
+
+
